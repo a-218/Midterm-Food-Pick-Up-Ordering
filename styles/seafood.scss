@@ -1,0 +1,120 @@
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+
+
+}
+
+body {
+  background:white;
+  color: white;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+    border-radius: 40px;
+    margin:0;
+    padding:0;
+
+    /* margin: 20px 0; */
+    margin-left: 1%;
+    margin-right: 1%;
+
+}
+/*each direct div of the container is a grid item*/
+.container > div{
+  height:210px;
+  background:lightblue;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 40px;
+
+
+}
+
+/* .food-image{
+  align-self: center;
+  max-width: 40%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 40px;
+  margin-left: 100px;;
+
+} */
+
+/* yet to fix might be good */
+.food-image {
+  align-self: center;
+  max-width: 54%;
+  min-height: 49%;
+  /* margin-top: 10px; */
+  /* margin-bottom: 10px; */
+  border-radius: 40px;
+  margin-left: 90px;
+}
+
+.description{
+  display: flex;
+  text-align: left;
+  align-items: flex-end;
+  margin-right: 20px;
+  justify-content: space-between;
+  padding: 0 15px 0 15px;
+  color:black;
+}
+
+.image-desciption{
+  width:80%
+}
+
+.price-button{
+  display: flex;
+  flex-direction: column;
+  width:35%;
+  justify-content:space-evenly;
+  margin-right: 10px;
+  align-items: center;
+  color: black;
+
+}
+
+
+
+.addtocart{
+  --c: #027ad6;
+  color: var(--c);
+  font-size: 10px;
+  border: 0.3em solid var(--c);
+  border-radius: 0.5em;
+  width: 13em;
+  height: 3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: sans-serif;
+  /* letter-spacing: 0.1em; */
+  text-align: center;
+  /* line-height: 3em; */
+  /* position: relative; */
+  /* overflow: hidden; */
+  /* z-index: 1; */
+   transition: 0.5s;
+  /* margin: 1em;*/
+  max-height: 20%;
+  /* margin-top:80px;*/
+
+}
+
+
+.addtocart:hover {
+  color:blue;
+  transform: translateY(0) scale(1.1);
+  background-color: var(--c);
+}
+
+
+
