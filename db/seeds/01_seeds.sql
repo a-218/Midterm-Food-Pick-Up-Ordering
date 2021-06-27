@@ -1,4 +1,4 @@
-INSERT INTO users (name, email, password)
+INSERT INTO users (name, phone, password)
 VALUES ('Eva Stanley', '778-349-3299', 'password'),
 ('Louisa Meyer', '778-125-2216', 'password'),
 ('Dominic Parks', '778-848-9923', 'password');
@@ -18,7 +18,7 @@ VALUES ('Dungeness Crab', 'Freshly boiled local crab served with our signature c
 ('Lil Crits Bucket', 'Shrimps, Crawfishes, clams and mussels with corns and potatoes', '../docs/dungeness.jpg', 50);
 
 
-INSERT INTO orders (user_id, start_time, duration, gst, notes)
+INSERT INTO orders (user_id, start_time, duration, gst, note)
 VALUES (1, '2018-02-12T08:00:00.000Z', 30, 5, 'N/A'),
 (2, '2018-02-12T08:06:00.000Z', 15, 5, 'Please rush.');
 
