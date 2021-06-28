@@ -1,0 +1,30 @@
+.background{
+  width:100%
+}
+
+.banner{
+
+  text-align: center;
+  position: fixed;
+  width:100%;
+}
+
+.welcomesign{
+  background-color: #62cade;
+  position: absolute;
+  top:35%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background-size:100%;
+  display:flex;
+  justify-content: space-around;
+  width: 30%; opacity: 0.8;
+  border-radius: 5px;
+
+  h2{
+    color:white;
+    font-size:34px;
+    // justify-content: center;
+    }
+}
+
