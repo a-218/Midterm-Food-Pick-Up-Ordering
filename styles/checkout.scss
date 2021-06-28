@@ -1,0 +1,28 @@
+
+.placeorder {
+  padding: 1em;
+  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 2px solid #62cade;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.placeorder > h1 {
+  width: 100%;
+  border-bottom:1px solid red;
+  display:inline-block;
+}
+
+.qty {
+  width: 50px;
+  height: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
