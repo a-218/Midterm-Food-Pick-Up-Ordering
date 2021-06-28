@@ -13,14 +13,18 @@ module.exports = (db) => {
     db.query(`SELECT * FROM foods;`)
       .then(data => {
         const foods = data.rows;
-        console.log(foods);
-        res.json({ foods });
+        const templatevars = {foods}
+        console.log(templatevars)
+        //res.json( foods );
+        console.log('template vars here are,', templatevars,);
+       return res.render("seafood",templatevars);
       })
       .catch(err => {
         res
           .status(500)
           .json({ error: err.message });
       });
+
   });
   return router;
 };

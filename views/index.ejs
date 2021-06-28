@@ -1,26 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home Page</title>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <!-- Include stylesheets -->
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+  <link rel="stylesheet" href="/styles/seafood.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/index.css" type="text/css" />
+  <!-- Include stylesheets -->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <!-- 'Source Sans Pro', sans-serif; font link -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
+</head>
 
-      <!-- 'Source Sans Pro', sans-serif; font link -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
-        rel="stylesheet">
-  </head>
 
-  <body>
-    <%- include('partials/_header') %>
+
+
+    <body>
+      <%- include('partials/_header') %>
+      <section class="banner">
+        <p> <img class="background" src="https://www.avenuecalgary.com/wp-content/uploads/2019/01/FlowerandWolf.jpg"></p>
+        <div class="welcomesign" >
+
+          <br>
+          <h2>Welcome!!!</h2>
+          <br>
+        </div>
+      </section>
+
+        <div class="container">
+          <!-- <div class="different">
+            <div class="image-des">
+              <img class="food-image" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-grilled-lobster-tail-pinterest-still016-1556908472.jpg?crop=1.00xw:0.669xh;0,0.255xh&resize=768:*">
+              <h3 class="nameofdish">GRILLED CHICKEN BREAST STRIPS</h3>
+              <p class="description">.bell peppers ,onions, 6 tortillas. sour cream, pico de gallo , guacamole, house sauce</p>
+            </div>
+
+            <div class="price-button">
+              <p class= "price"> Price:40$</p>
+              <button type="submit" class="addtocart" >Add to Cart</button>
+            </div>
+          </div> -->
+
+        </div>
+
+    </body>
 
   </body>
 </html>
