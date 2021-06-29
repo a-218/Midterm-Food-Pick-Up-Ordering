@@ -35,9 +35,12 @@ module.exports = function(database) {
           return;
         }
         req.session.user = user;
+        console.log('asdsadsadsadsadsaduser', user);
+
         // res.send(user);
         // res.send({user: {name: user.name, phone: user.phone, id: user.id}});
         res.redirect('/');
+        //res.render('index', user);
       })
       .catch(e => res.send(e));
   });

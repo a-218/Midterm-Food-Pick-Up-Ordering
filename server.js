@@ -64,13 +64,15 @@ app.use("/api/foods_orders", foods_ordersRoutes(db));
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
   const user = req.session.user;
+
+  console.log('sdfdsfdsf', user);
   const templateVars = { user };
   res.render("index", templateVars);
 });
 
 app.get("/login", (req, res) => {
   const user = req.session.user;
-  const templateVars = { user };
+  const templateVars = { user};
   res.render("login", templateVars);
 })
 
