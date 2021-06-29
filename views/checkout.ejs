@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <head>
   <title>CheckOut</title>
+
   <link rel="stylesheet" href="/styles/checkout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/items_to_orders.js"></script>
+  <script type="text/javascript" src="/scripts/amount_with_qty.js"></script>
+
+  <!-- 'Source Sans Pro', sans-serif; font link -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
   </head>
 
   <body>
   <%- include('partials/_header') %>
+    <% if (user) { %>
     <form class="placeorder" method="post">
       <h1>CHECK OUT</h1>
-      <div class="itemsList">
+      <table class="itemsList">
+      </table>
+      <div class="note">
+        <h3>Special Instructions(optional)</h3>
+        <textarea placeholder="Add a note(e.g. extra sauce, no onions)"></textarea>
       </div>
-      <button type="submit">Place Order</button>
+      <div class="receipt">
+        <div class="total subtotals">
+          <text>Subtotal</text>
+          <span class="subtotal"></span>
+        </div>
+        <div class="total taxes">
+          <text>Tax</text>
+          <span class="tax"></span>
+        </div>
+        <div class="total totals">
+          <text>Total</text>
+          <span class="total_amount"></span>
+        </div>
+      </div>
+      <button class="ordersubmit" type="submit">Place Order</button>
     </form>
+    <% } else { %>
+      <h1>Login First!</h1>
+    <% } %>
   </body>
 </html>

@@ -2,10 +2,9 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
+  router.post("/:id", (req, res) => {
     db.query(`
-    SELECT foods_orders.id, foods.name, description, price, foods_orders.quantity FROM foods_orders
-    JOIN foods ON foods.id = foods_orders.food_id;`)
+    INSERT INTO orders `)
       .then(data => {
         const foods_orders = data.rows;
         res.json({ foods_orders });
