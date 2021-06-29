@@ -9,6 +9,9 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const cookieSession = require('cookie-session');
+const userRoutes = require('./userRoutes');
+
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -20,7 +23,10 @@ db.connect();
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
-
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1']
+}));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/styles", sass({
@@ -29,6 +35,10 @@ app.use("/styles", sass({
   debug: true,
   outputStyle: 'expanded'
 }));
+
+// /user/endpoints
+app.use('/', userRoutes(db));
+
 app.use(express.static("public"));
 
 // Separated Routes for each Resource
@@ -53,16 +63,30 @@ app.use("/api/foods_orders", foods_ordersRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  const user = req.session.user;
+  const templateVars = { user };
+  res.render("index", templateVars);
 });
 
+app.get("/login", (req, res) => {
+  const user = req.session.user;
+  const templateVars = { user };
+  res.render("login", templateVars);
+})
+
 app.get("/seafood", (req, res) => {
-  res.render("seafood");
+  const user = req.session.user;
+  const templateVars = { user };
+  res.render("seafood", templateVars);
 });
 
 app.get("/checkout", (req, res) => {
-  res.render("checkout");
+  const user = req.session.user;
+  const templateVars = { user };
+  res.render("checkout", templateVars);
 })
+
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

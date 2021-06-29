@@ -10,6 +10,18 @@
         <a class="navbar-Popular" href="/">Features</a>
         <a class="navbar-Features" href="/checkout">Your Orders</a>
     </div>
+    <% if (user) { %>
+      <div class="navbar-nav">
+      <form class="form-inline" action="/logout" method="POST">
+        <span style="margin-right: 1em">Logged In As: <%= user.name %>!</span>
+        <button type="submit">Logout</button>
+      </form>
+      </div>
+      <% } else { %>
+      <div class="navbar-nav">
+        <a href="/login">Login</a>
+      </div>
+    <% } %>
   </div>
 </header>
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+  </head>
+
+  <body>
+  <%- include('partials/_header') %>
+    <h3>Login</h3>
+    <form method="POST" action="/login">
+      <div>
+        <label>Name</label>
+        <input name="name" type="name" placeholder="Enter name" style="width: 325px" required >
+      </div>
+      <div>
+        <label>Password</label>
+        <input name="password" type="password" placeholder="Password" style="width: 325px" >
+      </div>
+      <button type="submit" class="login">Login</button>
+    </form>
+  </body>
+</html>
