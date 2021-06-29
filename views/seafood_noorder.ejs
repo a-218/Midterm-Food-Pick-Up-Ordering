@@ -27,7 +27,7 @@
     <div class="containers">
       <% for (let food of foods) { %>
       <div class="box">
-          <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-grilled-lobster-tail-pinterest-still016-1556908472.jpg?crop=1.00xw:0.669xh;0,0.255xh&resize=768:*" alt="" class="box__image">
+          <img src="/images/<%= food.image%>"  alt="" class="box__image">
           <div class="box__content">
             <p>
               <%= food.name%>

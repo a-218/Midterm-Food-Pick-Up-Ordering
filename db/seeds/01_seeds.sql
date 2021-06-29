@@ -10,7 +10,7 @@ VALUES ('Dungeness Crab', 'Freshly boiled local crab served with our signature c
 ('Snow Crab Legs', 'Treat yourself and your loved ones with this exotic Alaskan snow crab', 'snow.jpg', 30),
 ('Shrimp', 'Freshly boiled Equadorian shrimp served with your choice of our signature sauce', 'shrimp.jpg', 20),
 ('Crawfish', 'Southern boil classic seafood, a must try on our menu', 'crawfish.jpg', 25),
-('Southern Fried Chicken and Pancake', 'Deep fried southern style fried chicken served on top of fluffy cornmeal pancake', 'docs/pancakes.jpg', 20),
+('Southern Fried Chicken and Pancake', 'Deep fried southern style fried chicken served on top of fluffy cornmeal pancake', 'pancakes.jpg', 20),
 ('Trio of Seafood Rolls', 'Shrimp, crab, and lobster meat served with butter on a toasted bun', 'rolls.jpg', 35),
 ('Toast Board', 'A vegetarian and a smoked salmon toasts served black beans and wild rice salad', 'toast.jpg', 50),
 ('The Classic Bucket', 'A dungeness crab, shrimps, crawfish with corns and potatoes', 'classic.jpg', 80),
