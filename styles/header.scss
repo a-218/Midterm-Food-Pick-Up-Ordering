@@ -21,6 +21,7 @@ header{
   flex-direction: row;
   color: white;
   width:100%;
+  justify-content: space-around;
 }
 
 .navbar-Food,.navbar-Popular,.navbar-Features{
@@ -29,5 +30,16 @@ header{
   color:white;
 }
 
+.navbar-navee  {   /*edit the headers login*/
+  display:flex;
+  font-family: 'Bungee';
+  color:black;
+
+}
+
+button{
+  font-size: inherit;
+  font:inherit;
+}
 
 

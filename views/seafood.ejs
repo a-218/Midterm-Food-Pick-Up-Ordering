@@ -23,40 +23,32 @@
 
 <body>
   <%- include('partials/_header') %>
-    <h2> in a diferent page</h2>
-    <div class="container">
-      <!-- <div class="different">
-        <div class="image-des">
-          <img class="food-image" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-grilled-lobster-tail-pinterest-still016-1556908472.jpg?crop=1.00xw:0.669xh;0,0.255xh&resize=768:*">
-          <h3 class="nameofdish">GRILLED CHICKEN BREAST STRIPS</h3>
-          <p class="description">.bell peppers ,onions, 6 tortillas. sour cream, pico de gallo , guacamole, house sauce</p>
+  <div class="containers">
+    <% for (let food of foods) { %>
+      <div class="box">
+        <img src="/images/classic.jpg" alt="" class="box__image">
+        <div class="box__content">
+          <p>
+            <%= food.name%>
+          </p>
+          <p>
+            <%= food.description%>
+          </p>
         </div>
 
-        <div class="price-button">
-          <p class= "price"> Price:40$</p>
-          <button type="submit" class="addtocart" >Add to Cart</button>
-        </div>
-      </div> -->
-
-
-
-         <% for (let food of foods) { %>
-
-          <div class="different">
-            <div class="image-des">
-              <img class="food-image" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-grilled-lobster-tail-pinterest-still016-1556908472.jpg?crop=1.00xw:0.669xh;0,0.255xh&resize=768:*">
-              <h3 class="nameofdish"><%= food.name%></h3>
-              <p class="description"><%= food.description%></p>
-            </div>
-            <div class="price-button">
-              <p class= "price"> Price:<%= food.price%>$</p>
-              <button type="submit" class="addtocart" >Add to Cart</button>
-            </div>
+        <div class="box__info">  <!--image info-->
+          <div>
+            <p class= "price"> Price:<%= food.price%>$</p>
           </div>
-
-         <%}%>
-
-
+          <div>
+            <form action="/action_page.php" method="get" id="form1">
+            <button type="submit" class="addtocart" >Add to Cart</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <%}%>
+    </div>
     </div>
 
 </body>

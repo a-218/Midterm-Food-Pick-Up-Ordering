@@ -9,8 +9,25 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
 
+  router.get("/", (req, res) => {
+    if (req.session.user) {
+      db.query(`SELECT * FROM foods;`)
+      .then(data => {
+        const user = req.session.user
+        const foods = data.rows;
+        const templatevars = {foods,user}
+        //console.log(templatevars)
+        //res.json( foods );
+        //console.log('template vars here are,', templatevars,);
+       return res.render("seafood",templatevars);
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+    }
     db.query(`SELECT * FROM foods;`)
       .then(data => {
         const user = req.session.user
@@ -29,25 +46,25 @@ module.exports = (db) => {
 
   });
 
-  router.get("/:order_id", (req, res) => {
+  // router.get("/:order_id", (req, res) => {
 
-    db.query(`SELECT * FROM foods;`)
-      .then(data => {
-        const user = req.session.user
-        const foods = data.rows;
-        const templatevars = {foods,user}
-        //console.log(templatevars)
-        //res.json( foods );
-        //console.log('template vars here are,', templatevars,);
-       return res.render("seafood",templatevars);
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
+  //   db.query(`SELECT * FROM foods;`)
+  //     .then(data => {
+  //       const user = req.session.user
+  //       const foods = data.rows;
+  //       const templatevars = {foods,user}
+  //       //console.log(templatevars)
+  //       //res.json( foods );
+  //       //console.log('template vars here are,', templatevars,);
+  //      return res.render("seafood",templatevars);
+  //     })
+  //     .catch(err => {
+  //       res
+  //         .status(500)
+  //         .json({ error: err.message });
+  //     });
 
-  });
+  // });
 
 
 
@@ -56,9 +73,9 @@ module.exports = (db) => {
     //  ////////this needs to be able to pass the cookies in ehere as a user_id///////
     //   const sdfdsf = req.seesion.user_id;
     //   console.log('tehrererer^^^^^^^^^^^^^^^^^', sdfdsf );
-      if (req.session.order_id) {
-        return res.redirect(`foods/${req.session.order_id}`);
-      }
+
+       res.redirect(`foods`);
+
       const user_id = req.session.user.id
       const currentTime = new Date();
       db.query(`INSERT INTO orders (user_id, start_time, duration, gst) VALUES ($1, $2,$3, $4) RETURNING *`, [user_id,currentTime,520, 999 ])

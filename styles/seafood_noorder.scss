@@ -67,12 +67,7 @@
   text-decoration: underline;
 }
 
-.signin{
-  background-color: rgb(93, 156, 214);
-}
-
-
-.addtocart {
+.signin {
   --c: #027ad6;
   color: var(--c);
   font-size: 10px;
@@ -95,8 +90,10 @@
   /* margin-top:80px;*/
 }
 
-.addtocart:hover {
+.signin:hover {
   color: blue;
   transform: translateY(0) scale(1.1);
   background-color: var(--c);
 }
+
+
