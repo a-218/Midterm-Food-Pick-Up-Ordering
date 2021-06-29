@@ -41,7 +41,7 @@
             <p class= "price"> Price:<%= food.price%>$</p>
           </div>
           <div>
-            <form action="/action_page.php" method="get" id="form1">
+            <form action="/foods/<%= food.id%>" method="POST" id="form1">
             <button type="submit" class="addtocart" >Add to Cart</button>
             </form>
           </div>

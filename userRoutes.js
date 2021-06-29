@@ -35,6 +35,7 @@ module.exports = function(database) {
           return;
         }
         req.session.user = user;
+        req.session.foods_id = [];
         // res.send(user);
         // res.send({user: {name: user.name, phone: user.phone, id: user.id}});
         res.redirect('/');

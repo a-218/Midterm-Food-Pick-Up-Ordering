@@ -96,26 +96,30 @@ module.exports = (db) => {
         });
     });
 
-  router.post("/:order_id", (req,res) => {
+  router.post("/:food_id", (req,res) => {
 
-      console.log('random string sdfsdfd++xxxxxxx++', req.params.order_id);
-      const order_id = req.params.order_id;
-      const foods_id = req.body.foods_id;
+      console.log('**********************', req.params);
+      const foods_id = req.params.food_id;
+      req.session.foods_id.push(foods_id);
+    console.log('**********************', req.session.foods_id);
+
+    res.redirect('/foods');
+
       console.log('@@@@@@@@@@@@@@@@@@@@@', foods_id)
-      db.query(`INSERT INTO foods_orders (food_id, order_id, quantity) VALUES ($1,$2,$3);`, [foods_id, order_id,1])
-        .then(data => {
-          const foods = data.rows;
-          const templatevars = {foods}
-         // console.log(templatevars)
-          //res.json( foods );
-          //console.log('template vars here are,', templatevars,);
-          res.redirect (`/foods/${order_id}`)
-        })
-        .catch(err => {
-          res
-            .status(500)
-            .json({ error: err.message });
-        });
+      // db.query(`INSERT INTO foods_orders (food_id, order_id, quantity) VALUES ($1,$2,$3);`, [foods_id, order_id,1])
+      //   .then(data => {
+      //     const foods = data.rows;
+      //     const templatevars = {foods}
+      //    // console.log(templatevars)
+      //     //res.json( foods );
+      //     //console.log('template vars here are,', templatevars,);
+      //     res.redirect (`/foods/${order_id}`)
+      //   })
+      //   .catch(err => {
+      //     res
+      //       .status(500)
+      //       .json({ error: err.message });
+      //   });
     })
 
 
