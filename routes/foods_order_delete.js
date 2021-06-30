@@ -1,18 +1,15 @@
 const express = require('express');
 const router  = express.Router();
 
-module.exports = (db) => {
-  router.post("/:id", (req, res) => {
-    db.query(`
-    DELETE FROM foods_orders WHERE id = ${req.params.id};`)
-      .then(() => {
-        res.redirect("/checkout");
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
+module.exports = () => {
+  router.post("/:foods_id", (req, res) => {
+    const foods_id = req.session.foods_id.filter(id => id !== req.params.foods_id);
+    req.session.foods_id = foods_id;
+    if (req.session.foods_id.length > 0) {
+      res.redirect("/checkout");
+      return;
+    }
+    res.redirect("/");
   });
   return router;
 };
