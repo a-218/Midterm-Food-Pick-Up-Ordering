@@ -27,7 +27,7 @@ module.exports = (db) => {
           .status(500)
           .json({ error: err.message });
       });
-    }
+    } else {
     db.query(`SELECT * FROM foods;`)
       .then(data => {
         const user = req.session.user
@@ -43,7 +43,7 @@ module.exports = (db) => {
           .status(500)
           .json({ error: err.message });
       });
-
+    }
   });
 
   // router.get("/:order_id", (req, res) => {
@@ -98,12 +98,9 @@ module.exports = (db) => {
 
   router.post("/:food_id", (req,res) => {
 
-      console.log('**********************', req.params);
       const foods_id = req.params.food_id;
       req.session.foods_id.push(foods_id);
-    console.log('**********************', req.session.foods_id);
-
-    res.redirect('/foods');
+      res.redirect('/foods');
 
       console.log('@@@@@@@@@@@@@@@@@@@@@', foods_id)
       // db.query(`INSERT INTO foods_orders (food_id, order_id, quantity) VALUES ($1,$2,$3);`, [foods_id, order_id,1])

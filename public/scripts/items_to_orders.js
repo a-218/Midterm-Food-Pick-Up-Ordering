@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   //Creating table data
   const createCheckoutElement = (orderItem) => {
-
+    let quantity = 1;
     const $item = $(
       `
       <tr>
@@ -35,12 +35,12 @@ $(document).ready(function() {
         <td class="qty-price">
           <div class="qtyControl">
             <div class="qtyDec">-</div>
-            <span class="qty">${orderItem.quantity}</span>
+            <span class="qty">${quantity}</span>
             <div class="qtyInc">+</div>
           </div>
         </td>
         <td class="price-data">
-          $<span class="amount">${orderItem.price * orderItem.quantity}</span>
+          $<span class="amount">${orderItem.price * quantity}</span>
         </td>
         <td>
           <form method="post" action="/api/delete/${orderItem.id}">
