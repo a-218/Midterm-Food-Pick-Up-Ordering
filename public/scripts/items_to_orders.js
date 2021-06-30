@@ -35,7 +35,7 @@ $(document).ready(function() {
         <td class="qty-price">
           <div class="qtyControl">
             <div class="qtyDec">-</div>
-            <span class="qty">${quantity}</span>
+            <input name="item-${orderItem.id}" class="qty" type="text" value="${quantity}"></input>
             <div class="qtyInc">+</div>
           </div>
         </td>

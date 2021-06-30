@@ -18,13 +18,13 @@
   <body>
   <%- include('partials/_header') %>
     <% if (user) { %>
-    <form class="placeorder" method="post">
+    <form action="/checkout" class="placeorder" method="post">
       <h1>CHECK OUT</h1>
       <table class="itemsList">
       </table>
       <div class="note">
         <h3>Special Instructions(optional)</h3>
-        <textarea placeholder="Add a note(e.g. extra sauce, no onions)"></textarea>
+        <textarea name="note" placeholder="Add a note(e.g. extra sauce, no onions)"></textarea>
       </div>
       <div class="receipt">
         <div class="total subtotals">

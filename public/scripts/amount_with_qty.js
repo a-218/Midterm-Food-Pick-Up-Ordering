@@ -2,13 +2,13 @@ $(document).ready(function() {
 
   $( ".itemsList" ).on('click', '.qtyDec', function () {
     //Get the values
-    const quantity = parseInt($(this).siblings(".qty").text());
+    const quantity = parseInt($(this).siblings(".qty").val());
     const amount = parseInt($(this).parents().siblings(".price-data").children(".amount").text());
 
     //Item must be greater than 1
     //Keep track quatity
     if (quantity > 1) {
-      $(this).siblings(".qty").text(quantity - 1);
+      $(this).siblings(".qty").val(quantity - 1);
       $(this).parents().siblings(".price-data").children(".amount").text(amount - (amount / quantity));
     }
 
@@ -28,11 +28,11 @@ $(document).ready(function() {
 
   $( ".itemsList" ).on('click', '.qtyInc', function () {
     //Get the values
-    const quantity = parseInt($(this).siblings(".qty").text());
+    const quantity = parseInt($(this).siblings(".qty").val());
     const amount = parseInt($(this).parents().siblings(".price-data").children(".amount").text());
 
     //Keep track quatity
-    $(this).siblings(".qty").text(parseInt(quantity) + 1);
+    $(this).siblings(".qty").val(parseInt(quantity) + 1);
     $(this).parents().siblings(".price-data").children(".amount").text(amount + (amount / quantity));
 
     let subtotal = 0;
