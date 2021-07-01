@@ -27,7 +27,9 @@ $(document).ready(function() {
     const $item = $(
       `
       <tr>
-        <td>${orderItem.id}</td>
+        <td>
+        <input name="food_id" class="food_id" value="${orderItem.id}" readOnly></input>
+        </td>
         <td class="itemInfo">
           <h3>${orderItem.name}</h3>
           <text>${orderItem.description}</text>
@@ -35,7 +37,7 @@ $(document).ready(function() {
         <td class="qty-price">
           <div class="qtyControl">
             <div class="qtyDec">-</div>
-            <input name="item-${orderItem.id}" class="qty" type="text" value="${quantity}"></input>
+            <input name="qty" class="qty" type="text" value="${quantity}"></input>
             <div class="qtyInc">+</div>
           </div>
         </td>
