@@ -20,7 +20,7 @@ module.exports = (db) => {
         //console.log(templatevars)
         //res.json( foods );
         //console.log('template vars here are,', templatevars,);
-       return res.render("seafood",templatevars);
+       return res.render("popular",templatevars);
       })
       .catch(err => {
         res
@@ -36,7 +36,7 @@ module.exports = (db) => {
         //console.log(templatevars)
         //res.json( foods );
         //console.log('template vars here are,', templatevars,);
-       return res.render("seafood_noorder",templatevars);
+       return res.render("popular_noorder",templatevars);
       })
       .catch(err => {
         res
@@ -101,8 +101,8 @@ module.exports = (db) => {
       const foods_id = req.params.food_id;
       req.session.foods_id.push(foods_id);
       res.redirect('/foods');
-       console.log('*****************', req.session.foods_id)
-    console.log('@@@@@@@@@@@@@@@@@@@@@', foods_id)
+      //console.log('*****************', req.session.foods_id)
+      //console.log('@@@@@@@@@@@@@@@@@@@@@', foods_id)
       // db.query(`INSERT INTO foods_orders (food_id, order_id, quantity) VALUES ($1,$2,$3);`, [foods_id, order_id,1])
       //   .then(data => {
       //     const foods = data.rows;
