@@ -2,11 +2,12 @@
 <head>
   <title>Restaurant Order</title>
 
-  <link rel="stylesheet" href="/styles/restaurant.css" type="text/css" />
+
   <!-- <link rel="stylesheet" href="/styles/header.css" type="text/css" /> -->
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/order_items.js"></script>
   <script type="text/javascript" src="/scripts/amount_with_qty.js"></script>
+  <link rel="stylesheet" href="/styles/restaurant.css" type="text/css" />
 
   <!-- 'Source Sans Pro', sans-serif; font link -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,12 +21,12 @@
 </header>
 <body>
 
-    <form action="/restaurant" class="placeorder" method="post">
-      <h1>ORDER #1</h1>
+    <!-- <form action="/restaurant" class="placeorder" method="post">
+      <h1>ORDER #1</h1> -->
 
-    <!-----<form action="/order" class="placeorder" method="post">
+    <form action="/order" class="placeorder" method="post">
       <h1>You Have Received A New Order For</hi>
-      <hi><%= user.name%></h1> ----->
+      <hi><%= user.name%></h1>
 
       <table>
         <thead>
