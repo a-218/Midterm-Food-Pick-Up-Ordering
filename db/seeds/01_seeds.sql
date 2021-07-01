@@ -1,7 +1,8 @@
 INSERT INTO users (name, phone, password)
 VALUES ('Eva Stanley', '778-349-3299', 'password'),
 ('Louisa Meyer', '778-125-2216', 'password'),
-('Dominic Parks', '778-848-9923', 'password');
+('Dominic Parks', '778-848-9923', 'password'),
+('Emma Watson', '778-765-4321', 'password');
 
 INSERT INTO foods (name, description, image, price)
 VALUES ('Dungeness Crab', 'Freshly boiled local crab served with our signature cajun sauce', 'dungeness.jpg', 50),
@@ -15,7 +16,7 @@ VALUES ('Dungeness Crab', 'Freshly boiled local crab served with our signature c
 ('Toast Board', 'A vegetarian and a smoked salmon toasts served black beans and wild rice salad', 'toast.jpg', 50),
 ('The Classic Bucket', 'A dungeness crab, shrimps, crawfish with corns and potatoes', 'classic.jpg', 80),
 ('Arctic Sea Bucket', 'A king crab leg and a snow crab cluster with corns and potatoes', 'arctic.jpg', 75),
-('Lil Crits Bucket', 'Shrimps, Crawfishes, clams and mussels with corns and potatoes', 'dungeness.jpg', 50);
+('Lil Crits Bucket', 'Shrimps, Crawfishes, clams and mussels with corns and potatoes', 'crits.jpg', 50);
 
 
 INSERT INTO orders (user_id, start_time, duration, note)

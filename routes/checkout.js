@@ -25,6 +25,7 @@ module.exports = (db) => {
           RETURNING *;`, [food_id[i], order_id, qty[i]])
         }
         req.session.order_id = order_id;
+        req.session.foods_id = [];
         res.json({ order_id });
         console.log(req.session.order_id);
       })

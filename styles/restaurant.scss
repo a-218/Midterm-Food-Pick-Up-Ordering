@@ -1,17 +1,30 @@
 header{
   display: flex;
   width: 100%;
+  height: 150px;
   color:#FFFFFF;
-  background-color: orange;
+  background-color: orangered;
   align-items: center;
   justify-content: center;
-
+  opacity: 0.75;
+  font-size: 30px;
 }
 body{
-  // background-image: url("../images/background.jpg");
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  height: 100%;
 }
 form{
   background-color: whitesmoke;
+  opacity: 0.85;
+}
+table{
+  width: 90%;
+}
+.table{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .placeorder {
   padding: 1em;
@@ -23,16 +36,22 @@ form{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-family: "Source Sans Pro";
 }
 .placeorder > h1 {
-  width: 100%;
-  border-bottom:1px solid red;
-  display:inline-block;
+  width: 95%;
+  border-bottom:5px solid red;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1em;
 }
 
 .itemsList {
-  width: 95%;
+  width: 100%;
+
 }
 
 .itemInfo {
@@ -40,59 +59,21 @@ form{
   font-size: 20px;
 }
 
-.qty-price {
-  width: 100px;
-  display: flex;
-  flex-direction: row;
-  font-weight: bold;
+select {
+  height: 50px;
+  width: 200px;
   font-size: 20px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.qtyControl {
-  width: 90px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100px;
-  justify-content: space-between;
-}
-
-.qtyDec {
-  font-size: 23px;
-}
-
-.qtyInc {
-  font-size: 23px;
 }
 
 .price-data {
   font-size: 20px;
   font-weight: bold;
-}
-
-.deleteItem {
-  background-color: red;
-  color: #FFFF;
-  height: 30px;
-  width: 90px;
-  margin-right: 1em;
-  border-radius: 4px;
-  font-size: 15px;
-}
-
-.qtyControl {
-  width: 80px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100px;
+  margin-right: 10px;
 }
 
 .qty {
   height:20px;
-  width: 20px;
+  width:12%;
   text-align: center;
 }
 
@@ -135,12 +116,13 @@ form{
   font-weight: bold;
 }
 
-.ordersubmit {
+.confirm {
   margin-top: 3em;
+  margin-bottom: 2em;
   border-radius: 4px;
   background-color: #0c72f7;
-  font-size: 20px;
+  font-size: 22px;
   width: 40%;
-  height:40px;
+  height:50px;
   color: #FFFFFF;
 }

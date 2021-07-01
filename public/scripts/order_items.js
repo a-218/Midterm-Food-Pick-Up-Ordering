@@ -25,8 +25,8 @@ $(document).ready(function() {
   const createCheckoutElement = (orderItem) => {
     const $item = $(
       `
-      <tr>
-        <td>${orderItem.quantity}</td>
+      <tr class="table">
+        <td class="qty"><h2>${orderItem.quantity}</h2></td>
         <td class="itemInfo">
           <h3>${orderItem.name}</h3>
           <text>${orderItem.description}</text>
