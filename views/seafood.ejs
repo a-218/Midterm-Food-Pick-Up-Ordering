@@ -32,7 +32,7 @@
       <div class="box">
         <img src="/images/<%= food.image%>" alt="" class="box__image">
         <div class="box__content">
-          <p>
+          <p class= 'dish'>
             <%= food.name%>
           </p>
           <p>
@@ -46,6 +46,14 @@
           </div>
           <div>
             <!-- modified from id to class using ajax -->
+
+
+              <!-- <div id='updated' style="display:none"><p>The product was successfully added to your Shopping Cart</p></div>
+              <script src="http://code.jquery.com/jquery-latest.js"></script>
+              <script type="text/javascript">
+              $('#updated').fadeIn(800).delay(3000).fadeOut(800)
+              </script> -->
+
             <form data-id="<%= food.id%>"  class="form1">
               <button type="submit" class="addtocart" >Add to Cart</button>
               </form>

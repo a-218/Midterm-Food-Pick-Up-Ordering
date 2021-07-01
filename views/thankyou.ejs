@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+  <title>Thank You</title>
+
+  <link rel="stylesheet" href="/styles/thankyou.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/items_to_orders.js"></script>
+  <script type="text/javascript" src="/scripts/amount_with_qty.js"></script>
+
+  <!-- 'Source Sans Pro', sans-serif; font link -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
+  </head>
+
+  <body>
+    <%- include('partials/_header') %>
+
+    <div class=content>
+      <div class="wrapper-1">
+        <div class="wrapper-2">
+          <h1 class="thank">Thank you !</h1>
+          <p>Your order has been placed!</p>
+          <p>you should receive a message from us soon!</p>
+
+          <form action="/" method="GET">
+          <button type="submit" class="go-home">
+          Back to the Main Page
+          </button>
+        </form>
+        </div>
+
+    </div>
+    </div>
+
+
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">
+      <div class=content>
+
+            <h1>Thank you !</h1>
+            <p>Your order has been placed </p>
+            <p>You should receive a confirmation message soon  </p>
+            <!-- <form > <%= user.id%></form> -->
+            <!-- <button class="go-home">
+            Back to The Menu
+            </button>
+      </div> --> -->
+
+
+
+  </body>
+</html>

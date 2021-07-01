@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-
+const {sendMessage} = require("../public/scripts/sms");
 
 module.exports = (db) => {
   router.post("/", (req, res) => {
@@ -24,10 +24,15 @@ module.exports = (db) => {
           VALUES ($1, $2, $3)
           RETURNING *;`, [food_id[i], order_id, qty[i]])
         }
+
         req.session.order_id = order_id;
         req.session.foods_id = [];
-        res.json({ order_id });
-        console.log(req.session.order_id);
+        res.redirect('thankyou');
+      })
+      .then(res => {
+        let restMessage = `You have a new order from ${req.session.user.name}`
+        sendMessage(restMessage);
+
       })
       .catch(err => {
         res
