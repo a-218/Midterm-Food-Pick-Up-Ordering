@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+  <title>Restaurant Order</title>
+
+  <link rel="stylesheet" href="/styles/restaurant.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="/styles/header.css" type="text/css" /> -->
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/order_items.js"></script>
+  <script type="text/javascript" src="/scripts/amount_with_qty.js"></script>
+
+  <!-- 'Source Sans Pro', sans-serif; font link -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
+</head>
+
+<header>
+  <h1>Seafood Restaurant</h1>
+</header>
+<body>
+    <form action="/order" class="placeorder" method="post">
+      <h1>ORDER #1</h1>
+      <table>
+        <thead>
+          <tr>
+            <td>
+              <h4>Quantity</h4>
+            </td>
+            <td>
+              <h3>Food Name</h3>
+            </td>
+            <td>
+              <h3>Price</h3>
+            </td>
+          </tr>
+        </thead>
+        <tbody class="itemsList">
+        </tbody>
+      </table>
+      <div class="note">
+        <h3>Please specify how long to complete the order</h3>
+        <textarea name="note" placeholder="Please keep the service time below 20 minutes to maintain your restaurant rating"></textarea>
+      </div>
+      <div class="receipt">
+        <div class="total subtotals">
+          <text>Subtotal</text>
+          <span class="subtotal"></span>
+        </div>
+        <div class="total taxes">
+          <text>Tax</text>
+          <span class="tax"></span>
+        </div>
+        <div class="total totals">
+          <text>Total</text>
+          <span class="total_amount"></span>
+        </div>
+      </div>
+      <button class="ordersubmit" type="submit">Confirm Order</button>
+    </form>
+  </body>
+
+
+
+
+
+</html>

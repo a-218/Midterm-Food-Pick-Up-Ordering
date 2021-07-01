@@ -92,6 +92,10 @@ app.get("/checkout", (req, res) => {
   res.render("checkout", templateVars);
 })
 
+app.get("/restaurant", (req, res) => {
+  res.render("restaurant");
+})
+
 
 
 app.listen(PORT, () => {
