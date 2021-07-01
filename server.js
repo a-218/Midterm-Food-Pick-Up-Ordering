@@ -97,6 +97,14 @@ app.get("/restaurant", (req, res) => {
 })
 
 
+app.get("/thankyou", (req, res) => {
+  const user = req.session.user;
+  const templateVars = { user };
+  console.log('tmeplate vars hsere ;', templateVars)
+  res.render("thankyou", templateVars);
+
+})
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
