@@ -51,6 +51,9 @@ const foods_ordersRoutes = require("./routes/foods_orders");
 const delete_foods = require("./routes/foods_order_delete");
 const checkout = require("./routes/checkout");
 
+
+const restaurant= require("./routes/restaurant");
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -60,6 +63,10 @@ app.use("/api/orders", ordersRoutes(db));
 app.use("/api/foods_orders", foods_ordersRoutes(db));
 app.use("/api/delete", delete_foods(db));
 app.use("/checkout", checkout(db));
+
+
+
+app.use("/restaurant", restaurant(db));
 // Note: mount other resources here, using the same pattern above
 
 
@@ -96,7 +103,6 @@ app.get("/restaurant", (req, res) => {
   res.render("restaurant");
 })
 
-
 app.get("/thankyou", (req, res) => {
   const user = req.session.user;
   const templateVars = { user };
@@ -104,6 +110,8 @@ app.get("/thankyou", (req, res) => {
   res.render("thankyou", templateVars);
 
 })
+
+
 
 
 app.listen(PORT, () => {
