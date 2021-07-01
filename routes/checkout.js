@@ -24,7 +24,9 @@ module.exports = (db) => {
           VALUES ($1, $2, $3)
           RETURNING *;`, [food_id[i], order_id, qty[i]])
         }
+        req.session.order_id = order_id;
         res.json({ order_id });
+        console.log(req.session.order_id);
       })
       .catch(err => {
         res

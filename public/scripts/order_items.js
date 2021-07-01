@@ -2,7 +2,7 @@ $(document).ready(function() {
   //Get data form database table
   const loadOrderItems = () => {
     $.ajax({
-      url: '/api/foods_orders',
+      url: '/api/restaurant',
       method: 'get'
     }).then((result) => {
       renderCheckout(result);
@@ -23,17 +23,16 @@ $(document).ready(function() {
 
   //Creating table data
   const createCheckoutElement = (orderItem) => {
-    let quantity = 1;
     const $item = $(
       `
       <tr>
-        <td>${quantity}</td>
+        <td>${orderItem.quantity}</td>
         <td class="itemInfo">
           <h3>${orderItem.name}</h3>
           <text>${orderItem.description}</text>
         </td>
         <td class="price-data">
-          $<span class="amount">${orderItem.price * quantity}</span>
+          $<span class="amount">${orderItem.price * orderItem.quantity}</span>
         </td>
       </tr>
       `
