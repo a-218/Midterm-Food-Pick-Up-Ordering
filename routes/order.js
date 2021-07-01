@@ -5,9 +5,10 @@ const { sendMessage } = require("../public/scripts/sms");
 
 module.exports = (db) => {
   router.post("/", (req, res) => {
-    console.log(`${req.session}`)
+    console.log(`#######################, ${req.body.note}`)
+    console.log(`#######################, ${req.body.time}`)
     console.log(`the order over here, ${req.session.user.name}`)
-    let restMessage = `Hi ${req.session.user.name}, your order has been confirmed`
+    let restMessage = `Hi ${req.session.user.name}, your order will be ready in ${req.body.time} minutes`
     sendMessage(restMessage);
 
 
