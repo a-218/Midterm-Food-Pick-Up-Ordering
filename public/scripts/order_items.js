@@ -29,15 +29,20 @@ $(document).ready(function() {
 
 //Creating note data
 const createNotesElement = (orderItem) => {
-  const $item = $(
-    `
-      <span><b>Customer's special note :</b></span>
-      <br>
-      <span><b>${orderItem.note}</b></span>
-    `
-    );
-    return $item;
+  let customerNote = orderItem.note;
+  if (customerNote){
+    const $item = $(
+      `
+
+        <span><b>Customer's special note :</b></span>
+        <br>
+        <span><b>${orderItem.note}</b></span>
+      `
+      );
+      return $item;
   };
+  return null;
+};
 
   //Creating table data
   const createCheckoutElement = (orderItem) => {

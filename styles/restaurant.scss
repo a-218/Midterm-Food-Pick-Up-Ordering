@@ -40,7 +40,7 @@ table{
   font-family: "Source Sans Pro";
 }
 .placeorder > h1 {
-  width: 95%;
+  width: 90%;
   border-bottom:5px solid red;
   display:flex;
   justify-content: center;
@@ -80,7 +80,7 @@ select {
 .notes{
   width: 90%;
   font-size: 22px;
-  color: rgb(255, 0, 0);
+  color:black;
   margin-top: 2em;
   margin-left: auto;
   margin-right: auto;
@@ -133,4 +133,14 @@ select {
   width: 40%;
   height:50px;
   color: #FFFFFF;
+}
+
+
+
+.restaurant-name{
+  font-family: 'Dancing Script', cursive;
+  margin-left: 30px;
+  font-size: 62px;
+  color: black;
+  font-weight: bold;
 }
