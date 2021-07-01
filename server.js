@@ -52,9 +52,10 @@ const delete_foods = require("./routes/foods_order_delete");
 const checkout = require("./routes/checkout");
 const restaurant = require("./routes/restaurant");
 //const restaurant= require("./routes/restaurant");
-
-
 const order = require("./routes/order");
+
+
+const popular = require("./routes/popular");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -71,6 +72,9 @@ app.use("/order", order(db));
 //app.use("/restaurant", restaurant(db));
 
 app.use("/api/restaurant", restaurant(db));
+
+
+app.use("/popular", popular(db));
 
 // Note: mount other resources here, using the same pattern above
 
@@ -123,6 +127,13 @@ app.get("/thankyou", (req, res) => {
   res.render("thankyou", templateVars);
 
 })
+
+
+app.get("/popular", (req, res) => {
+  const user = req.session.user;
+  const templateVars = { user };
+  res.render("popular", templateVars);
+});
 
 
 app.listen(PORT, () => {
