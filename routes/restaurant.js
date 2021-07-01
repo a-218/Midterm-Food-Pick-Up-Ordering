@@ -8,7 +8,7 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     order_id = req.session.order_id;
     db.query(`
-    SELECT quantity, name, description, price
+    SELECT quantity, name, description, price, note
     FROM orders JOIN foods_orders ON orders.id = foods_orders.order_id
     JOIN foods ON foods.id = foods_orders.food_id
     WHERE orders.id = ${order_id};`)

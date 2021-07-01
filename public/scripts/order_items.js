@@ -5,12 +5,18 @@ $(document).ready(function() {
       url: '/api/restaurant',
       method: 'get'
     }).then((result) => {
+      renderNotes(result);
       renderCheckout(result);
       total();
     });
   };
 
-
+  //Rendering notes
+  const renderNotes = (items) => {
+    $('.notes').empty();
+    const notes = createNotesElement(items.foods_orders[0]);
+    $('.notes').append(notes);
+  };
 
   //Rendering elements
   const renderCheckout = (items) => {
@@ -19,6 +25,18 @@ $(document).ready(function() {
       const orderItem = createCheckoutElement(item);
       $('.itemsList').append(orderItem);
     }
+  };
+
+//Creating note data
+const createNotesElement = (orderItem) => {
+  const $item = $(
+    `
+      <span><b>Customer's special note :</b></span>
+      <br>
+      <span><b>${orderItem.note}</b></span>
+    `
+    );
+    return $item;
   };
 
   //Creating table data
