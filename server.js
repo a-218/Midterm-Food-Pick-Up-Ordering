@@ -50,6 +50,7 @@ const ordersRoutes = require("./routes/orders");
 const foods_ordersRoutes = require("./routes/foods_orders");
 const delete_foods = require("./routes/foods_order_delete");
 const checkout = require("./routes/checkout");
+const restaurant = require("./routes/restaurant");
 
 
 const restaurant= require("./routes/restaurant");
@@ -66,7 +67,11 @@ app.use("/checkout", checkout(db));
 
 
 
+
 app.use("/restaurant", restaurant(db));
+
+///app.use("/api/restaurant", restaurant(db));
+
 // Note: mount other resources here, using the same pattern above
 
 
@@ -100,7 +105,9 @@ app.get("/checkout", (req, res) => {
 })
 
 app.get("/restaurant", (req, res) => {
-  res.render("restaurant");
+  const user = req.session.user;
+  const templateVars = { user };
+  res.render("restaurant", templateVars);
 })
 
 app.get("/thankyou", (req, res) => {

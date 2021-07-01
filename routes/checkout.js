@@ -24,12 +24,15 @@ module.exports = (db) => {
           VALUES ($1, $2, $3)
           RETURNING *;`, [food_id[i], order_id, qty[i]])
         }
-        //res.json({ order_id });
+
+        req.session.order_id = order_id;
+        req.session.foods_id = [];
         res.redirect('thankyou');
       })
       .then(res => {
         let restMessage = `You have a new order from ${req.session.user.name}`
         sendMessage(restMessage);
+
       })
       .catch(err => {
         res
