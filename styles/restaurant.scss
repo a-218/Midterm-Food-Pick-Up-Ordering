@@ -1,6 +1,7 @@
 header{
   display: flex;
   width: 100%;
+  margin:auto;
   height: 150px;
   color:#FFFFFF;
   background-color: orangered;
@@ -140,7 +141,7 @@ select {
 .restaurant-name{
   font-family: 'Dancing Script', cursive;
   margin-left: 30px;
-  font-size: 62px;
-  color: black;
+  font-size: 75px;
+  color:black;
   font-weight: bold;
 }
