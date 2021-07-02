@@ -55,12 +55,19 @@
               </script> -->
 
             <form data-id="<%= foods[x].id%>"  class="form1">
-              <button type="submit" class="addtocart" >Add to Cart</button>
+              <button type="submit" class="cart-button">
+                <span class="add-to-cart">Add to cart</span>
+                <span class="added">Added</span>
+                <!-- <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-box"></i> -->
+              </button>
             </form>
           </div>
         </div>
       </div>
       <%}%>
+
+      <script type="text/javascript" src="/scripts/shoppingcart.js"></script>
     </div>
     </div>
 
