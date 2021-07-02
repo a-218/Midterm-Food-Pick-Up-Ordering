@@ -15,8 +15,8 @@
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
 
-    <!-- AJAX stylesheets -->
-    <script type="text/javascript" src="/scripts/addto.js"></script>
+  <!-- AJAX stylesheets -->
+  <script type="text/javascript" src="/scripts/addto.js"></script>
 
   <!-- 'Source Sans Pro', sans-serif; font link -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -27,42 +27,53 @@
 
 <body>
   <%- include('partials/_header') %>
-  <div class="containers">
-    <% for (let x= 0; x< 6; x++ ){ %>
+    <div class="containers">
+      <% for (let x=0; x< 6; x++ ){ %>
 
 
-      <div class="box">
-        <img src="/images/<%= foods[x].image%>" alt="" class="box__image">
-        <div class="box__content">
-          <p class= 'dish'>
-            <%= foods[x].name%>
-          </p>
-          <p>
-            <%= foods[x].description%>
-          </p>
-        </div>
-
-        <div class="box__info">  <!--image info-->
-          <div>
-            <p class= "price"> Price:<%= foods[x].price%>$</p>
+        <div class="box">
+          <img src="/images/<%= foods[x].image%>" alt="" class="box__image">
+          <div class="box__content">
+            <p class='dish'>
+              <%= foods[x].name%>
+            </p>
+            <p>
+              <%= foods[x].description%>
+            </p>
           </div>
-          <div>
 
-               <!-- <div id='updated' style="display:none"><p>The product was successfully added to your Shopping Cart</p></div>
+          <div class="box__info">
+            <!--image info-->
+            <div>
+              <p class="price"> Price:<%= foods[x].price%>$</p>
+            </div>
+            <div>
+
+              <!-- <div id='updated' style="display:none"><p>The product was successfully added to your Shopping Cart</p></div>
               <script src="http://code.jquery.com/jquery-latest.js"></script>
               <script type="text/javascript">
               $('#updated').fadeIn(800).delay(3000).fadeOut(800)
               </script> -->
 
-            <form data-id="<%= foods[x].id%>"  class="form1">
-              <button type="submit" class="addtocart" >Add to Cart</button>
-            </form>
+
+                <form data-id="<%= foods[x].id%>" class="form1">
+                  <!-- <button id="add-animation" type="submit" class="addtocart">Add to Cart</button>  -->
+                  <button type="submit" class="cart-button">
+                    <span class="add-to-cart">Add to cart</span>
+                    <span class="added">Added</span>
+                    <!-- <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-box"></i> -->
+                  </button>
+                </form>
+            </div>
           </div>
         </div>
-      </div>
-      <%}%>
+        <%}%>
+
+        <script type="text/javascript" src="/scripts/shoppingcart.js"></script>
     </div>
     </div>
+
 
 </body>
 
