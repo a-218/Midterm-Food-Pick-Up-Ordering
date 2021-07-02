@@ -46,3 +46,13 @@ The following steps are only for _one_ of the group members to perform.
 
 
 
+## Final Product
+
+!["screenshot of Home Page"](https://github.com/henriw22/Midterm-Food-Pick-Up-Ordering/blob/master/docs/1.png)
+!["screenshot of Menu Page without Signing in"](https://github.com/henriw22/Midterm-Food-Pick-Up-Ordering/blob/master/docs/2.png)
+!["screenshot of Menu page after login"](https://github.com/henriw22/Midterm-Food-Pick-Up-Ordering/blob/master/docs/3.png)
+!["screenshot of checkout page"](https://github.com/henriw22/Midterm-Food-Pick-Up-Ordering/blob/master/docs/4.png)
+!["screenshot of restaurant page with customer order"](https://github.com/henriw22/Midterm-Food-Pick-Up-Ordering/blob/master/docs/5.png)
+!["screenshot of text message from twilio"](https://github.com/henriw22/Midterm-Food-Pick-Up-Ordering/blob/master/docs/6.png)
+
+
