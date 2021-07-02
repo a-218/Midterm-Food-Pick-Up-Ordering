@@ -26,7 +26,6 @@ CREATE TABLE orders (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   start_time TIMESTAMP,
   duration INTEGER  NOT NULL DEFAULT 20,
-  gst INTEGER  NOT NULL DEFAULT 0,
   note TEXT
 );
 
