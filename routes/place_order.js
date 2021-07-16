@@ -1,7 +1,8 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
 module.exports = (db) => {
+
   router.post("/:id", (req, res) => {
     db.query(`
     INSERT INTO orders `)
@@ -15,5 +16,6 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
   return router;
 };

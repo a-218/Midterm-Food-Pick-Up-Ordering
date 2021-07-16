@@ -16,5 +16,4 @@ const sendMessage = (message) => {
 
 }
 
-
 module.exports = { sendMessage };

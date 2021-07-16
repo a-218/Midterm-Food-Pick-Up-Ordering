@@ -17,7 +17,7 @@ module.exports = (db) => {
       .then(data => {
 
         const order_id = data.rows[0].id;
-        console.log("order_id: ", order_id, food_id, qty);
+
         for (let i = 0; i < food_id.length; i++) {
           db.query(`
           INSERT INTO foods_orders (food_id, order_id, quantity)

@@ -10,8 +10,6 @@ $(document).ready(function() {
     });
   };
 
-
-
   //Rendering elements
   const renderCheckout = (items) => {
     $('.itemsList').empty();

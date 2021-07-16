@@ -1,8 +1,10 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
 module.exports = (db) => {
+
   router.get("/", (req, res) => {
+
     db.query(`SELECT * FROM orders;`)
       .then(data => {
         const orders = data.rows;
@@ -14,5 +16,6 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
   return router;
 };

@@ -13,9 +13,7 @@ module.exports = function(database) {
   const login =  function(name, password) {
     return getUserWithName(name)
     .then(user => {
-      // if (bcrypt.compareSync(password, user.password)) {
-      //   return user;
-      // } do this when we have extra time
+
       if(password === user.password) {
         return user;
       }
@@ -25,19 +23,18 @@ module.exports = function(database) {
   exports.login = login;
 
   router.post('/login', (req, res) => {
-    console.log('test');
+
     const {name, password} = req.body;
     login(name, password)
       .then(user => {
-        console.log('test:', user);
+
         if (!user) {
           res.send({error: "error"});
           return;
         }
         req.session.user = user;
         req.session.foods_id = [];
-        // res.send(user);
-        // res.send({user: {name: user.name, phone: user.phone, id: user.id}});
+
         res.redirect('/');
       })
       .catch(e => res.send(e));

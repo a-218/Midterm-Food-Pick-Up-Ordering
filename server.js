@@ -19,9 +19,6 @@ const dbParams = require('./lib/db.js');
 const db = new Pool(dbParams);
 db.connect();
 
-// Load the logger first so all (static) HTTP requests are logged to STDOUT
-// 'dev' = Concise output colored by response status for development use.
-//         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 app.use(cookieSession({
   name: 'session',
@@ -51,7 +48,6 @@ const foods_ordersRoutes = require("./routes/foods_orders");
 const delete_foods = require("./routes/foods_order_delete");
 const checkout = require("./routes/checkout");
 const restaurant = require("./routes/restaurant");
-//const restaurant= require("./routes/restaurant");
 const order = require("./routes/order");
 
 
@@ -69,7 +65,7 @@ app.use("/checkout", checkout(db));
 
 
 app.use("/order", order(db));
-//app.use("/restaurant", restaurant(db));
+
 
 app.use("/api/restaurant", restaurant(db));
 
